@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LMS5.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>📚 Library Management System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        /* Page background image */
+        body { 
+            background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover no-repeat;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header: solid blue */
+        .site-header {
+            background-color: var(--bs-primary);
+            color: #fff;
+            padding: 2px 0;  /* small height  10px height*/     
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .brand { 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            color: #fff; 
+            text-decoration: none; 
+        }
+
+        .navbar-nav { flex-direction: row; }
+        .nav-link { 
+            color: #fff !important; 
+            margin: 0 3px; 
+            font-weight: 500; 
+        }
+        .nav-link:hover { color: #ffeb3b !important; }
+
+        /* Dropdown submenu */
+        .dropdown-menu a { color: #000 !important; }
+        .dropdown-menu a:hover { background-color: #e9ecef; }
+
+        .welcome { color: #fff; margin-right: 12px; }
+
+        footer.site-footer { 
+            background: var(--bs-primary); 
+            color: #fff; 
+            padding: 8px 0; 
+            margin-top: 24px; 
+            text-align:center; 
+        }
+
+        /* Main content box */
+        .container-main {
+            padding: 24px 12px;
+            max-width:1200px;
+            margin: 24px auto;
+            background-color: rgba(255,255,255,0.85); /* semi-transparent */
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width:767px) {
+            .navbar-nav { flex-direction: column; }
+            .nav-link { margin: 6px 0; }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form runat="server">
+       <header class="site-header">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <!-- Brand -->
+              <a class="brand me-4 h3" href="~/">📚 LMS</a>
+
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-dark flex-grow-1">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav flex-row">
+                            <!-- Admin menu -->
+                           <asp:Panel ID="pnlAdmin" runat="server" Visible="false" CssClass="d-flex flex-row ms-3">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="usersDropdown" role="button" data-bs-toggle="dropdown">Users</a>
+                                <ul class="dropdown-menu" aria-labelledby="usersDropdown">
+                                    <li><a class="dropdown-item" href="Register.aspx">Register User</a></li>
+                                    <li><a class="dropdown-item" href="ManageUsers.aspx">Edit/View Users</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle" href="#" id="booksDropdown" role="button" data-bs-toggle="dropdown">Books</a>
+                                <ul class="dropdown-menu" aria-labelledby="booksDropdown">
+                                    <li><a class="dropdown-item" href="ManageBooks.aspx">Edit Books</a></li>
+                                    <li><a class="dropdown-item" href="BookReport.aspx">Book Report</a></li>
+                                    <li><a class="dropdown-item" href="/Shared/AvailableBooks.aspx">Available Books</a></li>
+                                </ul>
+                            </li>
+                        </asp:Panel>
+
+
+                            <!-- Librarian menu -->
+                            <asp:Panel ID="pnlLibrarian" runat="server" Visible="false" CssClass="d-flex flex-row ms-3">
+                               <li class="nav-item">
+                                    <a class="nav-link" href="ManageBooks.aspx">Manage Books</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="BorrowRecords.aspx">Borrow Records</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Shared/AvailableBooks.aspx">Available Books</a>
+                                </li>
+                            </asp:Panel>
+
+                            <!-- Member menu -->
+                            <asp:Panel ID="pnlMember" runat="server" Visible="false" CssClass="d-flex flex-row ms-3">
+                                <li class="nav-item">
+                                     <a class="nav-link" href="/Shared/AvailableBooks.aspx">Available Books</a>
+                                 </li>
+                                                                <li class="nav-item"><a class="nav-link" href="Borrow.aspx">Borrow a Book</a></li>
+                                <li class="nav-item"><a class="nav-link" href="MyBooks.aspx">My Borrowed Books</a></li>
+                            </asp:Panel>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- Right-side welcome/logout -->
+                <div class="d-flex align-items-center ms-3">
+                    <asp:Label ID="lblWelcome" runat="server" CssClass="welcome"></asp:Label>
+                    <asp:Button ID="btnLogout" runat="server" CssClass="btn btn-outline-light btn-sm ms-2" Text="Logout" OnClick="btnLogout_Click" Visible="false" />
+                    <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Login.aspx" CssClass="btn btn-light btn-sm text-primary ms-2">Login</asp:HyperLink>
+                </div>
+            </div>
+        </header>
+
+        <div class="container-main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+        <footer class="site-footer">
+            <div class="container">
+                <small>&copy; <%= DateTime.Now.Year %> Library Management System — Training Project</small>
+            </div>
+        </footer>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
