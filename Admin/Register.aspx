@@ -16,6 +16,7 @@
     <form id="form1" runat="server">
         <div class="card">
             <h2>Register New User</h2>
+            <!-- Full Name just to show commit-->
 
             <!-- Full Name -->
             <div class="mb-3">
