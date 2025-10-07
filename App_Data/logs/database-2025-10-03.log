@@ -1,0 +1,12 @@
+2025-10-03 23:39:29.8178 | DEBUG | LMS5.Global | jQuery script mapping registered 
+2025-10-03 23:39:43.2561 | DEBUG | LMS5.Login | Database connection opened for authentication query 
+2025-10-03 23:39:43.2842 | DEBUG | LMS5.Login | Login attempt logged to database - Username: Mukesh 
+2025-10-03 23:48:29.8988 | DEBUG | LMS5.Global | jQuery script mapping registered 
+2025-10-03 23:48:38.9939 | DEBUG | LMS5.Login | Database connection opened for authentication query 
+2025-10-03 23:48:39.0102 | DEBUG | LMS5.Login | Login attempt logged to database - Username: Mukesh 
+2025-10-03 23:50:21.7481 | DEBUG | LMS5.Global | jQuery script mapping registered 
+2025-10-03 23:50:31.3500 | DEBUG | LMS5.Login | Database connection opened for authentication query 
+2025-10-03 23:50:31.3500 | DEBUG | LMS5.Login | Login attempt logged to database - Username: Mukesh 
+2025-10-03 23:50:50.9691 | DEBUG | LMS5.Global | jQuery script mapping registered 
+2025-10-03 23:51:00.9041 | DEBUG | LMS5.Login | Database connection opened for authentication query 
+2025-10-03 23:51:00.9041 | DEBUG | LMS5.Login | Login attempt logged to database - Username: Mukesh 

@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using NLog;
 
 namespace LMS5.Member
 {
@@ -10,8 +11,12 @@ namespace LMS5.Member
     {
         string connStr = ConfigurationManager.ConnectionStrings["MyDBConn"].ConnectionString;
 
+        // Logger for borrow actions
+        private static readonly Logger BorrowLogger = LogManager.GetLogger("Borrow");
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Only members can access
             if (Session["UserId"] == null || Session["Role"]?.ToString() != "Member")
             {
                 Response.Redirect("~/Login.aspx");
@@ -22,6 +27,9 @@ namespace LMS5.Member
                 BindBooks();
         }
 
+        /// <summary>
+        /// Bind all books with their status
+        /// </summary>
         private void BindBooks()
         {
             using (SqlConnection conn = new SqlConnection(connStr))
@@ -45,6 +53,9 @@ namespace LMS5.Member
             }
         }
 
+        /// <summary>
+        /// Customize row appearance and borrow button
+        /// </summary>
         protected void GridViewBooks_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -73,12 +84,16 @@ namespace LMS5.Member
             }
         }
 
+        /// <summary>
+        /// Handle Borrow command and log it
+        /// </summary>
         protected void GridViewBooks_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Borrow")
             {
                 int bookId = Convert.ToInt32(e.CommandArgument);
                 int userId = Convert.ToInt32(Session["UserId"]);
+                string memberName = Session["Username"]?.ToString() ?? "Unknown";
 
                 try
                 {
@@ -95,14 +110,20 @@ namespace LMS5.Member
 
                     lblMessage.Text = "Book borrowed successfully!";
                     lblMessage.CssClass = "text-success";
+
+                    // Log borrow action
+                    BorrowLogger.Info($"Member '{memberName}' (UserId={userId}) borrowed BookId={bookId} at {DateTime.Now}");
                 }
                 catch (SqlException ex)
                 {
                     lblMessage.Text = "Error: " + ex.Message;
                     lblMessage.CssClass = "text-danger";
+
+                    // Log error
+                    BorrowLogger.Error(ex, $"Failed borrow attempt by Member '{memberName}' for BookId={bookId}");
                 }
 
-                BindBooks(); // Refresh grid to update borrow status
+                BindBooks(); // Refresh grid to update status
             }
         }
     }

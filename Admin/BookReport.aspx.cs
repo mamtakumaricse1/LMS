@@ -3,12 +3,13 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using NLog;
 
 namespace LMS5.Admin
 {
     public partial class BookReport : System.Web.UI.Page
     {
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
         string connStr = ConfigurationManager.ConnectionStrings["MyDBConn"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -16,41 +17,78 @@ namespace LMS5.Admin
             if (!IsPostBack)
             {
                 BindBooks();
+                BindStats();
             }
         }
 
         private void BindBooks(string author = "", string category = "")
         {
-            using (SqlConnection conn = new SqlConnection(connStr))
+            try
             {
-                string query = @"SELECT B.BookId, B.Title, B.ISBN, 
-                                 B.AuthorId, B.CategoryId,
-                                 A.Name AS AuthorName, C.Name AS CategoryName,
-                                 B.AddedDate
-                                 FROM Books B
-                                 INNER JOIN Authors A ON B.AuthorId = A.AuthorId
-                                 INNER JOIN Categories C ON B.CategoryId = C.CategoryId
-                                 WHERE (@AuthorName = '' OR A.Name LIKE '%' + @AuthorName + '%')
-                                   AND (@CategoryName = '' OR C.Name LIKE '%' + @CategoryName + '%')";
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    string query = @"
+                        SELECT B.BookId, B.Title, B.ISBN,
+                               A.Name AS AuthorName, C.Name AS CategoryName,
+                               B.AddedDate,
+                               CASE WHEN EXISTS(
+                                   SELECT 1 FROM BorrowRecords BR
+                                   WHERE BR.BookId = B.BookId AND BR.ReturnDate IS NULL
+                               ) THEN 'Borrowed' ELSE 'Available' END AS Status
+                        FROM Books B
+                        INNER JOIN Authors A ON B.AuthorId = A.AuthorId
+                        INNER JOIN Categories C ON B.CategoryId = C.CategoryId
+                        WHERE (@AuthorName = '' OR A.Name LIKE '%' + @AuthorName + '%')
+                          AND (@CategoryName = '' OR C.Name LIKE '%' + @CategoryName + '%')";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@AuthorName", author.Trim());
-                cmd.Parameters.AddWithValue("@CategoryName", category.Trim());
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@AuthorName", author.Trim());
+                    cmd.Parameters.AddWithValue("@CategoryName", category.Trim());
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                GridViewBooks.DataSource = dt;
-                GridViewBooks.DataBind();
+                    GridViewBooks.DataSource = dt;
+                    GridViewBooks.DataBind();
+
+                    logger.Info($"BookReport viewed. Author filter: '{author}', Category filter: '{category}', Rows: {dt.Rows.Count}");
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = "Error loading books: " + ex.Message;
+                lblMessage.CssClass = "text-danger";
+                logger.Error(ex, "Error loading BookReport");
+            }
+        }
+
+        private void BindStats()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    SqlCommand cmdTotal = new SqlCommand("SELECT COUNT(*) FROM Books", conn);
+                    SqlCommand cmdAvailable = new SqlCommand("SELECT COUNT(*) FROM Books B WHERE NOT EXISTS (SELECT 1 FROM BorrowRecords BR WHERE BR.BookId = B.BookId AND BR.ReturnDate IS NULL)", conn);
+                    SqlCommand cmdBorrowed = new SqlCommand("SELECT COUNT(*) FROM BorrowRecords WHERE ReturnDate IS NULL", conn);
+
+                    lblTotalBooks.InnerText = cmdTotal.ExecuteScalar().ToString();
+                    lblAvailableBooks.InnerText = cmdAvailable.ExecuteScalar().ToString();
+                    lblBorrowedBooks.InnerText = cmdBorrowed.ExecuteScalar().ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Error loading stats");
             }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string author = txtSearchAuthor.Text;
-            string category = txtSearchCategory.Text;
-            BindBooks(author, category);
+            BindBooks(txtSearchAuthor.Text, txtSearchCategory.Text);
+            BindStats();
         }
 
         protected void btnReset_Click(object sender, EventArgs e)
@@ -58,134 +96,12 @@ namespace LMS5.Admin
             txtSearchAuthor.Text = "";
             txtSearchCategory.Text = "";
             BindBooks();
-        }
-
-        protected void GridViewBooks_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            GridViewBooks.EditIndex = e.NewEditIndex;
-            BindBooks(txtSearchAuthor.Text, txtSearchCategory.Text);
-            BindDropdowns();
-        }
-
-        protected void GridViewBooks_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            GridViewBooks.EditIndex = -1;
-            BindBooks(txtSearchAuthor.Text, txtSearchCategory.Text);
-        }
-
-        protected void GridViewBooks_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            try
-            {
-                GridViewRow row = GridViewBooks.Rows[e.RowIndex];
-                int bookId = Convert.ToInt32(GridViewBooks.DataKeys[e.RowIndex].Value);
-
-                string title = ((TextBox)row.Cells[1].Controls[0]).Text.Trim();
-                string isbn = ((TextBox)row.Cells[4].Controls[0]).Text.Trim();
-
-                DropDownList ddlAuthors = (DropDownList)row.FindControl("ddlAuthors");
-                DropDownList ddlCategories = (DropDownList)row.FindControl("ddlCategories");
-
-                int authorId = Convert.ToInt32(ddlAuthors.SelectedValue);
-                int categoryId = Convert.ToInt32(ddlCategories.SelectedValue);
-
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    string query = @"UPDATE Books SET Title=@Title, AuthorId=@AuthorId, CategoryId=@CategoryId, ISBN=@ISBN WHERE BookId=@BookId";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Title", title);
-                    cmd.Parameters.AddWithValue("@AuthorId", authorId);
-                    cmd.Parameters.AddWithValue("@CategoryId", categoryId);
-                    cmd.Parameters.AddWithValue("@ISBN", isbn);
-                    cmd.Parameters.AddWithValue("@BookId", bookId);
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-
-                lblMessage.Text = "Book updated successfully!";
-                lblMessage.CssClass = "text-success mb-3";
-                GridViewBooks.EditIndex = -1;
-                BindBooks(txtSearchAuthor.Text, txtSearchCategory.Text);
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = "Error: " + ex.Message;
-                lblMessage.CssClass = "text-danger mb-3";
-            }
-        }
-
-        protected void GridViewBooks_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            try
-            {
-                int bookId = Convert.ToInt32(GridViewBooks.DataKeys[e.RowIndex].Value);
-
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    string query = "DELETE FROM Books WHERE BookId=@BookId";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@BookId", bookId);
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-
-                lblMessage.Text = "Book deleted successfully!";
-                lblMessage.CssClass = "text-success mb-3";
-                BindBooks(txtSearchAuthor.Text, txtSearchCategory.Text);
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = "Error: " + ex.Message;
-                lblMessage.CssClass = "text-danger mb-3";
-            }
-        }
-
-        private void BindDropdowns()
-        {
-            foreach (GridViewRow row in GridViewBooks.Rows)
-            {
-                if (row.RowType == DataControlRowType.DataRow && row.RowIndex == GridViewBooks.EditIndex)
-                {
-                    DropDownList ddlAuthors = (DropDownList)row.FindControl("ddlAuthors");
-                    DropDownList ddlCategories = (DropDownList)row.FindControl("ddlCategories");
-
-                    // Bind Authors
-                    using (SqlConnection conn = new SqlConnection(connStr))
-                    {
-                        SqlDataAdapter da = new SqlDataAdapter("SELECT AuthorId, Name FROM Authors", conn);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        ddlAuthors.DataSource = dt;
-                        ddlAuthors.DataTextField = "Name";
-                        ddlAuthors.DataValueField = "AuthorId";
-                        ddlAuthors.DataBind();
-                    }
-
-                    // Bind Categories
-                    using (SqlConnection conn = new SqlConnection(connStr))
-                    {
-                        SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryId, Name FROM Categories", conn);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        ddlCategories.DataSource = dt;
-                        ddlCategories.DataTextField = "Name";
-                        ddlCategories.DataValueField = "CategoryId";
-                        ddlCategories.DataBind();
-                    }
-                }
-            }
+            BindStats();
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Admin/AdminDashboard.aspx");
-        }
-
-        protected void btnAddBook_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Admin/CreateBook.aspx");
         }
     }
 }

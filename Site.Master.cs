@@ -10,21 +10,19 @@ namespace LMS5
         {
             if (!IsPostBack)
             {
-                // Check if user is authenticated
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
                     FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
                     FormsAuthenticationTicket ticket = id.Ticket;
 
                     string username = ticket.Name;
-                    string role = ticket.UserData; // we stored role in UserData when creating ticket
+                    string role = ticket.UserData;
 
                     lblWelcome.Text = $"Welcome, {username}";
                     lblWelcome.Visible = true;
                     btnLogout.Visible = true;
                     lnkLogin.Visible = false;
 
-                    // Show menu panels according to role
                     pnlAdmin.Visible = role == "Admin";
                     pnlLibrarian.Visible = role == "Librarian";
                     pnlMember.Visible = role == "Member";

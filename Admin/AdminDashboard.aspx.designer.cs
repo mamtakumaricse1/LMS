@@ -15,31 +15,58 @@ namespace LMS5
     {
 
         /// <summary>
-        /// GridViewUsers control.
+        /// lblBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewUsers;
+        protected global::System.Web.UI.WebControls.Label lblBooks;
 
         /// <summary>
-        /// btnAddUser control.
+        /// lblUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddUser;
+        protected global::System.Web.UI.WebControls.Label lblUsers;
 
         /// <summary>
-        /// btnEditUser control.
+        /// lblIssued control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditUser;
+        protected global::System.Web.UI.WebControls.Label lblIssued;
+
+        /// <summary>
+        /// lblOverdue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOverdue;
+
+        /// <summary>
+        /// btnManageUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManageUsers;
+
+        /// <summary>
+        /// btnManageBooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManageBooks;
 
         /// <summary>
         /// btnBookReport control.
@@ -49,5 +76,14 @@ namespace LMS5
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBookReport;
+
+        /// <summary>
+        /// GridViewRecent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewRecent;
     }
 }

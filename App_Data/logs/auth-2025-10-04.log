@@ -1,0 +1,268 @@
+2025-10-04 00:03:09.5231 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 00:03:09.5868 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 00:03:32.0039 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 00:03:32.0039 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 00:03:50.3846 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-04 00:03:50.3846 | ERROR | LMS5.Login | Error during login for user: bob System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-04 00:28:04.8771 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-04 00:28:04.9520 | ERROR | LMS5.Login | Error during login for user: kriti System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-04 00:37:05.6466 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-04 00:37:05.6615 | ERROR | LMS5.Login | Error during login for user: sunidhi System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-04 00:45:40.9533 | ERROR | LMS5.Login | Unexpected error during login for user: shiv System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsSuccess'.
+Invalid column name 'LoginTime'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 60
+ClientConnectionId:8f1ff608-0323-4468-bad3-e8cf336bd793
+Error Number:207,State:1,Class:16
+2025-10-04 00:45:48.2695 | ERROR | LMS5.Login | Unexpected error during login for user: shiv System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsSuccess'.
+Invalid column name 'LoginTime'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 60
+ClientConnectionId:8f1ff608-0323-4468-bad3-e8cf336bd793
+Error Number:207,State:1,Class:16
+2025-10-04 00:45:52.2161 | INFO | LMS5.Login | Login failed: Missing input. User=shiv, Role=Librarian 
+2025-10-04 00:46:03.1474 | ERROR | LMS5.Login | Unexpected error during login for user: bob System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsSuccess'.
+Invalid column name 'LoginTime'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 60
+ClientConnectionId:8f1ff608-0323-4468-bad3-e8cf336bd793
+Error Number:207,State:1,Class:16
+2025-10-04 00:46:15.4730 | ERROR | LMS5.Login | Unexpected error during login for user: kriti System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsSuccess'.
+Invalid column name 'LoginTime'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 60
+ClientConnectionId:8f1ff608-0323-4468-bad3-e8cf336bd793
+Error Number:207,State:1,Class:16
+2025-10-04 00:46:17.1741 | INFO | LMS5.Login | Login failed: Missing input. User=kriti, Role=Member 
+2025-10-04 00:46:34.1572 | ERROR | LMS5.Login | Unexpected error during login for user: shiv System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsSuccess'.
+Invalid column name 'LoginTime'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 60
+ClientConnectionId:8f1ff608-0323-4468-bad3-e8cf336bd793
+Error Number:207,State:1,Class:16
+2025-10-04 00:46:46.6403 | ERROR | LMS5.Login | Unexpected error during login for user: Mukesh System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsSuccess'.
+Invalid column name 'LoginTime'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 60
+ClientConnectionId:8f1ff608-0323-4468-bad3-e8cf336bd793
+Error Number:207,State:1,Class:16
+2025-10-04 00:47:26.0389 | ERROR | LMS5.Login | Unexpected error during login for user: Mukesh System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsSuccess'.
+Invalid column name 'LoginTime'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 60
+ClientConnectionId:8f1ff608-0323-4468-bad3-e8cf336bd793
+Error Number:207,State:1,Class:16
+2025-10-04 00:47:58.2945 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 00:47:58.3622 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 00:53:12.9867 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 00:53:13.0531 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 00:54:36.8731 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 00:54:36.9351 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 01:01:53.0402 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 01:01:53.1156 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 01:07:52.1725 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 01:07:52.2415 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 01:09:49.6903 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 01:09:49.7559 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 01:12:42.1814 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 01:12:42.1883 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 01:20:58.6808 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:20:58.7308 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:24:36.4046 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:24:36.4496 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:28:41.6642 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:28:41.7344 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:32:27.6610 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:32:27.7212 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:35:30.9646 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:35:30.9646 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:38:18.4878 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:38:18.4878 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:41:35.6070 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:41:35.6070 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:42:35.4972 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:42:35.5747 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:44:08.8937 | INFO | LMS5.Login | Login successfull for user in mode: Librarian 
+2025-10-04 01:44:08.8937 | ERROR | LMS5.Login | Error during login for user: shiv System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 88
+2025-10-04 01:45:15.1424 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 01:45:15.1424 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 01:46:36.9133 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 01:46:36.9133 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-04 01:47:39.5540 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-04 01:47:39.5540 | ERROR | LMS5.Login | Error during login for user: bob System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-04 01:50:45.4336 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-04 01:50:45.4823 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85

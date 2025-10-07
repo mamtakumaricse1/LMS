@@ -15,22 +15,31 @@ namespace LMS5.Admin
     {
 
         /// <summary>
-        /// form1 control.
+        /// lblTotalBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTotalBooks;
 
         /// <summary>
-        /// lblMessage control.
+        /// lblAvailableBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAvailableBooks;
+
+        /// <summary>
+        /// lblBorrowedBooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblBorrowedBooks;
 
         /// <summary>
         /// txtSearchAuthor control.
@@ -69,22 +78,13 @@ namespace LMS5.Admin
         protected global::System.Web.UI.WebControls.Button btnReset;
 
         /// <summary>
-        /// btnBack control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
-
-        /// <summary>
-        /// btnAddBook control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddBook;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// GridViewBooks control.

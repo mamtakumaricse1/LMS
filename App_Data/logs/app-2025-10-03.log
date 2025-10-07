@@ -1,0 +1,251 @@
+2025-10-03 07:38:41.5037 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-03 07:38:41.5702 | ERROR | LMS5.Login | Error during login for user: bob System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-03 07:39:00.5843 | INFO | LMS5.Member.Borrow | User 3 borrowed Book 3 
+2025-10-03 07:40:22.2232 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-03 07:40:22.2232 | ERROR | LMS5.Login | Error during login for user: kriti System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-03 07:42:30.7651 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-03 07:42:30.7651 | ERROR | LMS5.Login | Error during login for user: sunidhi System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-03 07:43:00.0955 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-03 07:43:00.0955 | ERROR | LMS5.Login | Error during login for user: bob System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-03 07:43:39.7303 | INFO | LMS5.Login | Login successfull for user in mode: Member 
+2025-10-03 07:43:39.7303 | ERROR | LMS5.Login | Error during login for user: kriti System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 90
+2025-10-03 07:43:47.3885 | INFO | LMS5.Member.Borrow | User 6 borrowed Book 1 
+2025-10-03 08:07:03.1362 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-03 08:07:03.1742 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-03 23:39:29.7219 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:39:29.7810 | INFO | LMS5.Global | Application Starting... 
+2025-10-03 23:39:29.7810 | INFO | LMS5.Global | Application Start Time: 2025-10-03 23:39:29 
+2025-10-03 23:39:29.8178 | INFO | LMS5.Global | Routes registered successfully 
+2025-10-03 23:39:29.8178 | INFO | LMS5.Global | Script mappings registered successfully 
+2025-10-03 23:39:29.8178 | INFO | LMS5.Global | Application Started Successfully 
+2025-10-03 23:39:29.8178 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:39:32.4727 | INFO | LMS5.Global | New session started: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:39:32.6114 | INFO | LMS5.Login | Login page accessed 
+2025-10-03 23:39:41.0227 | INFO | LMS5.Login | Login attempt - Username: Mukesh, Role: Admin 
+2025-10-03 23:39:43.2842 | INFO | LMS5.Login | User session created - UserId: 1, Username: Mukesh, Role: Admin 
+2025-10-03 23:39:43.3031 | INFO | LMS5.Login | Login successful - User: Mukesh, Role: Admin, UserId: 1 
+2025-10-03 23:39:43.3031 | INFO | LMS5.Login | Redirecting user to: ~/Admin/AdminDashboard.aspx 
+2025-10-03 23:39:43.3267 | ERROR | LMS5.Login | Unexpected error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.RedirectUserByRole(String role) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 260
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 81
+2025-10-03 23:39:44.6156 | INFO | LMS5.SiteMaster | Page accessed: /Admin/AdminDashboard.aspx by user: Mukesh 
+2025-10-03 23:39:44.6987 | ERROR | LMS5.Global | Unhandled application error occurred System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.InvalidOperationException: 'bootstrap' is not a valid script name.  The name must end in '.js'.
+   at System.Web.UI.ScriptReference.GetDebugName(String releaseName)
+   at System.Web.UI.ScriptReference.ShouldUseDebugScript(String releaseName, Assembly assembly, Boolean isDebuggingEnabled, Assembly currentAjaxAssembly)
+   at System.Web.UI.ScriptReference.DetermineResourceNameAndAssembly(ScriptManager scriptManager, Boolean isDebuggingEnabled, String& resourceName, Assembly& assembly)
+   at System.Web.UI.ScriptReference.GetUrlFromName(ScriptManager scriptManager, IControl scriptManagerControl, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrlInternal(ScriptManager scriptManager, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrl(ScriptManager scriptManager, Boolean zip)
+   at System.Web.UI.ScriptManager.RegisterUniqueScripts(List`1 uniqueScripts)
+   at System.Web.UI.ScriptManager.RegisterScripts()
+   at System.Web.UI.ScriptManager.OnPagePreRenderComplete(Object sender, EventArgs e)
+   at System.Web.UI.Page.OnPreRenderComplete(EventArgs e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.admin_admindashboard_aspx.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-10-03 23:39:44.7162 | ERROR | LMS5.Global | URL: https://localhost:44326/Admin/AdminDashboard.aspx 
+2025-10-03 23:39:44.7162 | ERROR | LMS5.Global | User: Mukesh 
+2025-10-03 23:39:44.7162 | ERROR | LMS5.Global | User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 
+2025-10-03 23:48:26.4308 | INFO | LMS5.Global | Session ended for user: Mukesh, SessionID: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:48:26.4464 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:48:26.4620 | INFO | LMS5.Global | Application Shutting Down... 
+2025-10-03 23:48:26.4620 | INFO | LMS5.Global | Application End Time: 2025-10-03 23:48:26 
+2025-10-03 23:48:26.4620 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:48:29.8362 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:48:29.8988 | INFO | LMS5.Global | Application Starting... 
+2025-10-03 23:48:29.8988 | INFO | LMS5.Global | Application Start Time: 2025-10-03 23:48:29 
+2025-10-03 23:48:29.8988 | INFO | LMS5.Global | Routes registered successfully 
+2025-10-03 23:48:29.8988 | INFO | LMS5.Global | Script mappings registered successfully 
+2025-10-03 23:48:29.8988 | INFO | LMS5.Global | Application Started Successfully 
+2025-10-03 23:48:29.9143 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:48:31.1953 | INFO | LMS5.Global | New session started: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:48:31.2578 | INFO | LMS5.Login | Login page accessed 
+2025-10-03 23:48:38.8605 | INFO | LMS5.Login | Login attempt - Username: Mukesh, Role: Admin 
+2025-10-03 23:48:39.0102 | INFO | LMS5.Login | User session created - UserId: 1, Username: Mukesh, Role: Admin 
+2025-10-03 23:48:39.0102 | INFO | LMS5.Login | Login successful - User: Mukesh, Role: Admin, UserId: 1 
+2025-10-03 23:48:39.0102 | INFO | LMS5.Login | Redirecting user to: ~/Admin/AdminDashboard.aspx 
+2025-10-03 23:48:39.0258 | ERROR | LMS5.Login | Unexpected error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.RedirectUserByRole(String role) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 260
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 81
+2025-10-03 23:48:40.0607 | INFO | LMS5.SiteMaster | Page accessed: /Admin/AdminDashboard.aspx by user: Mukesh 
+2025-10-03 23:48:40.1379 | ERROR | LMS5.Global | Unhandled application error occurred System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.InvalidOperationException: 'bootstrap' is not a valid script name.  The name must end in '.js'.
+   at System.Web.UI.ScriptReference.GetDebugName(String releaseName)
+   at System.Web.UI.ScriptReference.ShouldUseDebugScript(String releaseName, Assembly assembly, Boolean isDebuggingEnabled, Assembly currentAjaxAssembly)
+   at System.Web.UI.ScriptReference.DetermineResourceNameAndAssembly(ScriptManager scriptManager, Boolean isDebuggingEnabled, String& resourceName, Assembly& assembly)
+   at System.Web.UI.ScriptReference.GetUrlFromName(ScriptManager scriptManager, IControl scriptManagerControl, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrlInternal(ScriptManager scriptManager, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrl(ScriptManager scriptManager, Boolean zip)
+   at System.Web.UI.ScriptManager.RegisterUniqueScripts(List`1 uniqueScripts)
+   at System.Web.UI.ScriptManager.RegisterScripts()
+   at System.Web.UI.ScriptManager.OnPagePreRenderComplete(Object sender, EventArgs e)
+   at System.Web.UI.Page.OnPreRenderComplete(EventArgs e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.admin_admindashboard_aspx.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-10-03 23:48:40.1379 | ERROR | LMS5.Global | URL: https://localhost:44326/Admin/AdminDashboard.aspx 
+2025-10-03 23:48:40.1379 | ERROR | LMS5.Global | User: Mukesh 
+2025-10-03 23:48:40.1379 | ERROR | LMS5.Global | User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 
+2025-10-03 23:50:18.4833 | INFO | LMS5.Global | Session ended for user: Mukesh, SessionID: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:50:18.4833 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:18.4989 | INFO | LMS5.Global | Application Shutting Down... 
+2025-10-03 23:50:18.4989 | INFO | LMS5.Global | Application End Time: 2025-10-03 23:50:18 
+2025-10-03 23:50:18.4989 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:21.6856 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:21.7325 | INFO | LMS5.Global | Application Starting... 
+2025-10-03 23:50:21.7325 | INFO | LMS5.Global | Application Start Time: 2025-10-03 23:50:21 
+2025-10-03 23:50:21.7481 | INFO | LMS5.Global | Routes registered successfully 
+2025-10-03 23:50:21.7481 | INFO | LMS5.Global | Script mappings registered successfully 
+2025-10-03 23:50:21.7481 | INFO | LMS5.Global | Application Started Successfully 
+2025-10-03 23:50:21.7481 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:22.9822 | INFO | LMS5.Global | New session started: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:50:23.0447 | INFO | LMS5.Login | Login page accessed 
+2025-10-03 23:50:31.2254 | INFO | LMS5.Login | Login attempt - Username: Mukesh, Role: Admin 
+2025-10-03 23:50:31.3500 | INFO | LMS5.Login | User session created - UserId: 1, Username: Mukesh, Role: Admin 
+2025-10-03 23:50:31.3657 | INFO | LMS5.Login | Login successful - User: Mukesh, Role: Admin, UserId: 1 
+2025-10-03 23:50:31.3657 | INFO | LMS5.Login | Redirecting user to: ~/Admin/AdminDashboard.aspx 
+2025-10-03 23:50:31.3657 | ERROR | LMS5.Login | Unexpected error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.RedirectUserByRole(String role) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 260
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 81
+2025-10-03 23:50:32.3152 | INFO | LMS5.SiteMaster | Page accessed: /Admin/AdminDashboard.aspx by user: Mukesh 
+2025-10-03 23:50:32.3818 | ERROR | LMS5.Global | Unhandled application error occurred System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.InvalidOperationException: 'bootstrap' is not a valid script name.  The name must end in '.js'.
+   at System.Web.UI.ScriptReference.GetDebugName(String releaseName)
+   at System.Web.UI.ScriptReference.ShouldUseDebugScript(String releaseName, Assembly assembly, Boolean isDebuggingEnabled, Assembly currentAjaxAssembly)
+   at System.Web.UI.ScriptReference.DetermineResourceNameAndAssembly(ScriptManager scriptManager, Boolean isDebuggingEnabled, String& resourceName, Assembly& assembly)
+   at System.Web.UI.ScriptReference.GetUrlFromName(ScriptManager scriptManager, IControl scriptManagerControl, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrlInternal(ScriptManager scriptManager, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrl(ScriptManager scriptManager, Boolean zip)
+   at System.Web.UI.ScriptManager.RegisterUniqueScripts(List`1 uniqueScripts)
+   at System.Web.UI.ScriptManager.RegisterScripts()
+   at System.Web.UI.ScriptManager.OnPagePreRenderComplete(Object sender, EventArgs e)
+   at System.Web.UI.Page.OnPreRenderComplete(EventArgs e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.admin_admindashboard_aspx.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-10-03 23:50:32.3818 | ERROR | LMS5.Global | URL: https://localhost:44326/Admin/AdminDashboard.aspx 
+2025-10-03 23:50:32.3818 | ERROR | LMS5.Global | User: Mukesh 
+2025-10-03 23:50:32.3974 | ERROR | LMS5.Global | User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 
+2025-10-03 23:50:41.0650 | INFO | LMS5.Global | Session ended for user: Mukesh, SessionID: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:50:41.0806 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:41.0806 | INFO | LMS5.Global | Application Shutting Down... 
+2025-10-03 23:50:41.0806 | INFO | LMS5.Global | Application End Time: 2025-10-03 23:50:41 
+2025-10-03 23:50:41.0806 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:50.9066 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:50.9691 | INFO | LMS5.Global | Application Starting... 
+2025-10-03 23:50:50.9691 | INFO | LMS5.Global | Application Start Time: 2025-10-03 23:50:50 
+2025-10-03 23:50:50.9691 | INFO | LMS5.Global | Routes registered successfully 
+2025-10-03 23:50:50.9691 | INFO | LMS5.Global | Script mappings registered successfully 
+2025-10-03 23:50:50.9691 | INFO | LMS5.Global | Application Started Successfully 
+2025-10-03 23:50:50.9847 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:50:52.6076 | INFO | LMS5.Global | New session started: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:50:52.7091 | INFO | LMS5.Login | Login page accessed 
+2025-10-03 23:51:00.7727 | INFO | LMS5.Login | Login attempt - Username: Mukesh, Role: Admin 
+2025-10-03 23:51:00.9041 | INFO | LMS5.Login | User session created - UserId: 1, Username: Mukesh, Role: Admin 
+2025-10-03 23:51:00.9211 | INFO | LMS5.Login | Login successful - User: Mukesh, Role: Admin, UserId: 1 
+2025-10-03 23:51:00.9211 | INFO | LMS5.Login | Redirecting user to: ~/Admin/AdminDashboard.aspx 
+2025-10-03 23:51:00.9211 | ERROR | LMS5.Login | Unexpected error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.RedirectUserByRole(String role) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 260
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 81
+2025-10-03 23:51:01.8460 | INFO | LMS5.SiteMaster | Page accessed: /Admin/AdminDashboard.aspx by user: Mukesh 
+2025-10-03 23:51:01.9031 | ERROR | LMS5.Global | Unhandled application error occurred System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.InvalidOperationException: 'bootstrap' is not a valid script name.  The name must end in '.js'.
+   at System.Web.UI.ScriptReference.GetDebugName(String releaseName)
+   at System.Web.UI.ScriptReference.ShouldUseDebugScript(String releaseName, Assembly assembly, Boolean isDebuggingEnabled, Assembly currentAjaxAssembly)
+   at System.Web.UI.ScriptReference.DetermineResourceNameAndAssembly(ScriptManager scriptManager, Boolean isDebuggingEnabled, String& resourceName, Assembly& assembly)
+   at System.Web.UI.ScriptReference.GetUrlFromName(ScriptManager scriptManager, IControl scriptManagerControl, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrlInternal(ScriptManager scriptManager, Boolean zip, Boolean useCdnPath)
+   at System.Web.UI.ScriptReference.GetUrl(ScriptManager scriptManager, Boolean zip)
+   at System.Web.UI.ScriptManager.RegisterUniqueScripts(List`1 uniqueScripts)
+   at System.Web.UI.ScriptManager.RegisterScripts()
+   at System.Web.UI.ScriptManager.OnPagePreRenderComplete(Object sender, EventArgs e)
+   at System.Web.UI.Page.OnPreRenderComplete(EventArgs e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.admin_admindashboard_aspx.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-10-03 23:51:01.9214 | ERROR | LMS5.Global | URL: https://localhost:44326/Admin/AdminDashboard.aspx 
+2025-10-03 23:51:01.9214 | ERROR | LMS5.Global | User: Mukesh 
+2025-10-03 23:51:01.9214 | ERROR | LMS5.Global | User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 
+2025-10-03 23:57:12.7648 | INFO | LMS5.Global | Session ended for user: Mukesh, SessionID: i4ygptvrq3ecawvdmfoyswcz 
+2025-10-03 23:57:12.7648 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:57:12.7648 | INFO | LMS5.Global | Application Shutting Down... 
+2025-10-03 23:57:12.7960 | INFO | LMS5.Global | Application End Time: 2025-10-03 23:57:12 
+2025-10-03 23:57:12.7960 | INFO | LMS5.Global | ======================================== 
+2025-10-03 23:59:49.2394 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-03 23:59:49.3197 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85

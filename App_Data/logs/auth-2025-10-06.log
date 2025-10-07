@@ -1,0 +1,49 @@
+2025-10-06 07:22:32.0604 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-06 07:22:32.1782 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-06 07:29:24.1332 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-06 07:29:24.2190 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-06 07:31:09.7184 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-06 07:31:09.7184 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-06 07:43:26.9462 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-06 07:43:27.0947 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-06 07:45:39.9493 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-06 07:45:40.0489 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-06 07:50:32.3458 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-06 07:50:32.4785 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85
+2025-10-06 07:53:46.0738 | INFO | LMS5.Login | Login successfull for user in mode: Admin 
+2025-10-06 07:53:46.2224 | ERROR | LMS5.Login | Error during login for user: Mukesh System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMS5.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\Admin\source\repos\LMS5\Login.aspx.cs:line 85

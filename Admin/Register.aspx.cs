@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace LMS
+namespace LMS5
 {
     public partial class Register : System.Web.UI.Page
     {
@@ -50,13 +50,11 @@ namespace LMS
                     lblMsg.Text = "Username already exists. Choose another.";
                 else
                     lblMsg.Text = "Database error: " + ex.Message;
+                lblMsg.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Admin/AdminDashboard.aspx");
-        }
+       
 
         private string ComputeSha256Hash(string rawData)
         {

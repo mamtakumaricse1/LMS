@@ -2,9 +2,9 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
-using System.Text;
+using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace LMS5.Admin
 {
@@ -15,9 +15,7 @@ namespace LMS5.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
                 BindUsers();
-            }
         }
 
         private void BindUsers()
@@ -39,26 +37,51 @@ namespace LMS5.Admin
             Response.Redirect("Register.aspx");
         }
 
-        protected void GridViewUsers_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
+        protected void GridViewUsers_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            lblMsg.Text = ""; // hide message when editing
             GridViewUsers.EditIndex = e.NewEditIndex;
             BindUsers();
         }
 
-        protected void GridViewUsers_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
+        protected void GridViewUsers_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridViewUsers.EditIndex = -1;
             BindUsers();
         }
 
-        protected void GridViewUsers_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
+        protected void GridViewUsers_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             int id = Convert.ToInt32(GridViewUsers.DataKeys[e.RowIndex].Value);
             GridViewRow row = GridViewUsers.Rows[e.RowIndex];
 
-            string username = ((System.Web.UI.WebControls.TextBox)row.Cells[1].Controls[0]).Text.Trim();
-            string fullName = ((System.Web.UI.WebControls.TextBox)row.Cells[2].Controls[0]).Text.Trim();
-            string role = ((System.Web.UI.WebControls.TextBox)row.Cells[3].Controls[0]).Text.Trim();
+            TextBox txtUsername = (TextBox)row.FindControl("txtUsername");
+            TextBox txtFullName = (TextBox)row.FindControl("txtFullName");
+            DropDownList ddlRole = (DropDownList)row.FindControl("ddlRole");
+
+            string username = txtUsername.Text.Trim();
+            string fullName = txtFullName.Text.Trim();
+            string role = ddlRole.SelectedValue;
+
+            // Server-side validation
+            if (!Regex.IsMatch(username, "^[A-Za-z]+$"))
+            {
+                lblMsg.Text = "Username must contain only letters";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            if (!Regex.IsMatch(fullName, "^[A-Za-z\\s]+$"))
+            {
+                lblMsg.Text = "Full Name must contain only letters";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            if (role != "Admin" && role != "Librarian" && role != "Member")
+            {
+                lblMsg.Text = "Invalid role selected";
+                lblMsg.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
 
             using (SqlConnection conn = new SqlConnection(connStr))
             {
@@ -75,11 +98,12 @@ namespace LMS5.Admin
 
             GridViewUsers.EditIndex = -1;
             BindUsers();
+
             lblMsg.Text = "User updated successfully!";
             lblMsg.ForeColor = System.Drawing.Color.Green;
         }
 
-        protected void GridViewUsers_RowDeleting(object sender, System.Web.UI.WebControls.GridViewDeleteEventArgs e)
+        protected void GridViewUsers_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int id = Convert.ToInt32(GridViewUsers.DataKeys[e.RowIndex].Value);
 
@@ -96,6 +120,20 @@ namespace LMS5.Admin
             BindUsers();
             lblMsg.Text = "User deleted successfully!";
             lblMsg.ForeColor = System.Drawing.Color.Red;
+        }
+
+        protected void GridViewUsers_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            // Preselect the correct role in edit mode
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex == GridViewUsers.EditIndex)
+            {
+                DropDownList ddlRole = (DropDownList)e.Row.FindControl("ddlRole");
+                if (ddlRole != null)
+                {
+                    string role = DataBinder.Eval(e.Row.DataItem, "Role").ToString();
+                    ddlRole.SelectedValue = role;
+                }
+            }
         }
     }
 }

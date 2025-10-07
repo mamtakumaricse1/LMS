@@ -49,7 +49,12 @@ namespace LMS5.Member
                     row["Status"] = row["ReturnDate"] == DBNull.Value ? "Borrowed" : "Returned";
                 }
 
-                GridViewMyBooks.DataSource = dt;
+                // ✅ Sort so that Borrowed books appear first, then Returned
+                DataView dv = dt.DefaultView;
+                dv.Sort = "Status ASC, BorrowDate DESC";
+                // “Borrowed” < “Returned” alphabetically, so ASC works fine
+
+                GridViewMyBooks.DataSource = dv;
                 GridViewMyBooks.DataBind();
             }
         }

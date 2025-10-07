@@ -6,26 +6,28 @@ namespace LMS5.Librarian
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // You can add future stats or summary code here
         }
 
         protected void btnManageBooks_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ManageBooks.aspx");
+            Response.Redirect("~/Shared/ManageBooks.aspx");
         }
 
-        protected void btnCreateBook_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CreateBook.aspx");
-        }
 
         protected void btnAvailableBooks_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AvailableBooks.aspx");
+            Response.Redirect("~/Shared/AvailableBooks.aspx");
         }
 
         protected void btnBorrowRecords_Click(object sender, EventArgs e)
         {
-            Response.Redirect("BorrowRecords.aspx");
+            Response.Redirect("~/Shared/BorrowRecords.aspx");
+        }
+
+        protected void btnOverdueBooks_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Shared/OverdueBooks.aspx");
         }
     }
 }
