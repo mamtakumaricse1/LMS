@@ -11,24 +11,35 @@ namespace LMS5.Member
     {
         string connStr = ConfigurationManager.ConnectionStrings["MyDBConn"].ConnectionString;
 
-        // Logger for borrow actions
-        private static readonly Logger BorrowLogger = LogManager.GetLogger("Borrow");
+        // ✅ Use class-based logger — NLog will automatically detect it as LMS5.Member.Borrow
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // Only members can access
             if (Session["UserId"] == null || Session["Role"]?.ToString() != "Member")
             {
+                logger.Warn("Unauthorized access attempt to Borrow page. Redirecting to Login.aspx");
                 Response.Redirect("~/Login.aspx");
                 return;
             }
 
             if (!IsPostBack)
-                BindBooks();
+            {
+                try
+                {
+                    BindBooks();
+                    logger.Info($"Borrow page loaded successfully for user '{Session["Username"]}'.");
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex, "Error while loading Borrow page.");
+                }
+            }
         }
 
         /// <summary>
-        /// Bind all books with their status
+        /// Bind all books with their availability status
         /// </summary>
         private void BindBooks()
         {
@@ -85,7 +96,7 @@ namespace LMS5.Member
         }
 
         /// <summary>
-        /// Handle Borrow command and log it
+        /// Handle borrow command and log the action
         /// </summary>
         protected void GridViewBooks_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -108,22 +119,30 @@ namespace LMS5.Member
                         cmd.ExecuteNonQuery();
                     }
 
-                    lblMessage.Text = "Book borrowed successfully!";
+                    lblMessage.Text = "✅ Book borrowed successfully!";
                     lblMessage.CssClass = "text-success";
 
-                    // Log borrow action
-                    BorrowLogger.Info($"Member '{memberName}' (UserId={userId}) borrowed BookId={bookId} at {DateTime.Now}");
+                    // ✅ Log success
+                    logger.Info($"Member '{memberName}' (UserId={userId}) borrowed BookId={bookId} successfully on {DateTime.Now:yyyy-MM-dd HH:mm:ss}.");
+
+                    BindBooks();
                 }
                 catch (SqlException ex)
                 {
-                    lblMessage.Text = "Error: " + ex.Message;
+                    lblMessage.Text = "⚠ Database Error: " + ex.Message;
                     lblMessage.CssClass = "text-danger";
 
-                    // Log error
-                    BorrowLogger.Error(ex, $"Failed borrow attempt by Member '{memberName}' for BookId={bookId}");
+                    // ❌ Log SQL error
+                    logger.Error(ex, $"SQL error while member '{memberName}' (UserId={userId}) tried to borrow BookId={bookId}.");
                 }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = "⚠ Unexpected Error: " + ex.Message;
+                    lblMessage.CssClass = "text-danger";
 
-                BindBooks(); // Refresh grid to update status
+                    // 🚨 Log unhandled errors
+                    logger.Fatal(ex, $"Unexpected error during borrow attempt by member '{memberName}' (UserId={userId}) for BookId={bookId}.");
+                }
             }
         }
     }

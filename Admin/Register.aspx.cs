@@ -3,11 +3,13 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
+using NLog; // ✅ Import NLog
 
 namespace LMS5
 {
     public partial class Register : System.Web.UI.Page
     {
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger(); // ✅ NLog logger
         string connStr = ConfigurationManager.ConnectionStrings["MyDBConn"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -43,18 +45,38 @@ namespace LMS5
                 lblMsg.ForeColor = System.Drawing.Color.Green;
                 lblMsg.Text = "User registered successfully!";
                 ClearFields();
+
+                // ✅ Log success
+                logger.Info($"New user registered successfully: Username={username}, Role={role}, FullName={fullName}");
             }
             catch (SqlException ex)
             {
                 if (ex.Number == 2627)
+                {
                     lblMsg.Text = "Username already exists. Choose another.";
+                    lblMsg.ForeColor = System.Drawing.Color.Red;
+
+                    // ✅ Log duplicate username attempt
+                    logger.Warn($"Attempted to register with existing username: {username}");
+                }
                 else
+                {
                     lblMsg.Text = "Database error: " + ex.Message;
+                    lblMsg.ForeColor = System.Drawing.Color.Red;
+
+                    // ✅ Log SQL error details
+                    logger.Error(ex, $"Database error while registering user: {username}");
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMsg.Text = "Unexpected error occurred.";
                 lblMsg.ForeColor = System.Drawing.Color.Red;
+
+                // ✅ Log any other unhandled exceptions
+                logger.Fatal(ex, $"Unexpected error during user registration for: {username}");
             }
         }
-
-       
 
         private string ComputeSha256Hash(string rawData)
         {

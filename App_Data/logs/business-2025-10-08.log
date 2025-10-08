@@ -1,0 +1,2 @@
+2025-10-08 07:44:54.3720 | INFO | LMS5.Member.Borrow | Borrow page loaded successfully for user 'bob'. 
+2025-10-08 07:45:03.0675 | INFO | LMS5.Member.Borrow | Member 'bob' (UserId=3) borrowed BookId=10 successfully on 2025-10-08 07:45:03. 
